@@ -10,6 +10,10 @@ bashio::var.json \
     entry "$(bashio::addon.ingress_entry)" \
     server "$(bashio::config 'server')" \
     proxy_pass_host "^$(bashio::config 'proxy_pass_host')" \
+    proxy_pass_real_ip "$(bashio::config 'proxy_pass_real_ip')" \
+    proxy_user "$(bashio::config 'proxy_user')" \
+    proxy_role "$(bashio::config 'proxy_role')" \
+    proxy_secret "$(bashio::config 'proxy_secret')" \
     | tempio \
         -template /etc/nginx/templates/ingress.gtpl \
         -out /etc/nginx/servers/ingress.conf

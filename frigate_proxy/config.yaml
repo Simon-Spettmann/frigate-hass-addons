@@ -1,5 +1,5 @@
 name: Frigate Proxy
-version: 1.6
+version: 1.7
 panel_icon: "mdi:cctv"
 panel_title: Frigate
 slug: frigate-proxy
@@ -32,6 +32,9 @@ schema:
   server: "match(^https?://.+:\\d+$)"
   proxy_pass_host: bool
   proxy_pass_real_ip: bool
+  proxy_user: "str?"
+  proxy_role: "str?"
+  proxy_secret: "password?"
 services: []
 arch:
   - aarch64

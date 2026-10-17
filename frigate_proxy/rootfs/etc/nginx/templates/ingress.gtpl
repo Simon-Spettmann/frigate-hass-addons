@@ -18,6 +18,15 @@ server {
           proxy_set_header X-Real-IP $remote_addr;
         {{ end }}
 
+        {{/* (Optional) Proxy authentication headers */}}
+        {{ if and .proxy_user .proxy_role }}
+          proxy_set_header X-Proxy-User "{{ .proxy_user }}";
+          proxy_set_header X-Proxy-Role "{{ .proxy_role }}";
+          {{ if .proxy_secret }}
+          proxy_set_header X-Proxy-Secret "{{ .proxy_secret }}";
+          {{ end }}
+        {{ end }}
+
         include /etc/nginx/includes/proxy_params.conf;
     }
 }

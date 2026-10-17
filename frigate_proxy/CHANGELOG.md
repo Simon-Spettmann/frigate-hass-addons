@@ -1,3 +1,8 @@
+### 1.7
+
+- Add optional proxy authentication support for seamless Home Assistant integration. Allows skipping the login page by setting a shared user and role.
+  New configuration options: `proxy_user`, `proxy_role`, `proxy_secret`
+
 ### 1.6
 
 - Refresh add-on with updated base image and nginx
